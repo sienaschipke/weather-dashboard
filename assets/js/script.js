@@ -1,6 +1,7 @@
 // DEPENDENCIES
 const cityInputEl = $("#cityInput")
 const submitBtn = $("#submitButton")
+const mainWeatherCard = $("#mainWeather");
 
 // DATA
 
@@ -40,14 +41,14 @@ const getLatAndLong = city => {
     };
 
 const getWeatherData = (lat, lon) => {
-    const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=ee7c96e3014aea6e9033db179b95b0cc`;
+    const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=ee7c96e3014aea6e9033db179b95b0cc`;
     
     fetch(apiUrl)
         .then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-            // displayRepos(data, user);
-            console.log(data);
+            displayWeather(data);
+            // console.log(data);
             });
         } else {
             alert(`Error:${response.statusText}`);
@@ -58,6 +59,16 @@ const getWeatherData = (lat, lon) => {
         });
     };
 
+const displayWeather = (data) => {
+    console.log(data);
+    const todaysDate = dayjs.unix(data.list[0].dt);
+    mainWeatherCard.append(`
+        <h2>${data.city.name} ${}</h2>
+        <p id="main-temp">Temp: ${data.list[0].main.temp} ºF</p>
+        <p id="main-wind">Wind: ${data.list[0].wind.speed} MPH</p>
+        <p id="main-humidity">Humidity: ${data.list[0].main.humidity}%</p>
+    `)
+}
 
 // USER INTERACTIONS
 submitBtn.on("click", submitBtnHandler);

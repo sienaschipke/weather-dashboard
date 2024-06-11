@@ -15,9 +15,9 @@
     </div>
         <div class="row">
             <div class="mx-5 my-3 col-3 border-bottom">
-                <h3 class="">Search for a city:</h3>
+                <h3>Search for a city:</h3>
                 <input type="text" class="form-control" id="cityInput" placeholder="Phoenix">
-                <button class="my-3 w-100 py-1 border border-0 bg-primary-subtle rounded">Submit</button>
+                <button class="my-3 w-100 py-1 border border-0 bg-primary-subtle rounded" id="submitButton">Submit</button>
             </div>
             <div class="col border border-black my-3 me-5 px-3">
                 <h2>Atlanta (6/10/2024)</h2>
@@ -29,47 +29,70 @@
         <div class="row">
             <div class="mx-5 col-3">
                 <button class="w-100 mb-2 py-1 bg-dark-subtle border border-0 rounded">Albuquerque</button>
-            <!-- </div> -->
-                <!-- <div class="mx-5 col-3 pb-2"> -->
                 <button class="w-100 mb-2 py-1 bg-dark-subtle border border-0 rounded">San Francisco</button>
-            <!-- </div> -->
-            <!-- <div class="mx-5 col-3 pb-2"> -->
                 <button class="w-100 mb-2 py-1 bg-dark-subtle border border-0 rounded">South Bend</button>
             </div>
-            <div class="col">
+            <div class="col-8 d-flex border border-warning justify-content-evenly">
+                <div class="forecast-card p-3">
+                    <h4>6/11/2024</h4>
+                    <p id="main-temp">Temp:</p>
+                    <p id="main-wind">Wind:</p>
+                    <p id="main-humidity">Humidity:</p>
+                </div>
+                <div class="forecast-card p-3">
+                    <h4>6/11/2024</h4>
+                    <p id="main-temp">Temp:</p>
+                    <p id="main-wind">Wind:</p>
+                    <p id="main-humidity">Humidity:</p>
+                </div>
+                <div class="forecast-card p-3">
+                    <h4>6/11/2024</h4>
+                    <p id="main-temp">Temp:</p>
+                    <p id="main-wind">Wind:</p>
+                    <p id="main-humidity">Humidity:</p>
+                </div>
+                <div class="forecast-card p-3">
+                    <h4>6/11/2024</h4>
+                    <p id="main-temp">Temp:</p>
+                    <p id="main-wind">Wind:</p>
+                    <p id="main-humidity">Humidity:</p>
+                </div>
+                <div class="forecast-card p-3">
+                    <h4>6/11/2024</h4>
+                    <p id="main-temp">Temp:</p>
+                    <p id="main-wind">Wind:</p>
+                    <p id="main-humidity">Humidity:</p>
+                </div>
+            </div>
+            <!-- <div class="col forecast-card p-2 me-3">
+                
+            </div>
+            <div class="col forecast-card p-2 me-3">
+                
+            </div>
+            <div class="col forecast-card p-2 me-3">
                 <h4>6/11/2024</h4>
                 <p id="main-temp">Temp:</p>
                 <p id="main-wind">Wind:</p>
                 <p id="main-humidity">Humidity:</p>
             </div>
-            <div class="col">
+            <div class="col forecast-card p-2 me-3">
                 <h4>6/11/2024</h4>
                 <p id="main-temp">Temp:</p>
                 <p id="main-wind">Wind:</p>
                 <p id="main-humidity">Humidity:</p>
             </div>
-            <div class="col">
+            <div class="col forecast-card p-2 me-3">
                 <h4>6/11/2024</h4>
                 <p id="main-temp">Temp:</p>
                 <p id="main-wind">Wind:</p>
                 <p id="main-humidity">Humidity:</p>
-            </div>
-            <div class="col">
-                <h4>6/11/2024</h4>
-                <p id="main-temp">Temp:</p>
-                <p id="main-wind">Wind:</p>
-                <p id="main-humidity">Humidity:</p>
-            </div>
-            <div class="col">
-                <h4>6/11/2024</h4>
-                <p id="main-temp">Temp:</p>
-                <p id="main-wind">Wind:</p>
-                <p id="main-humidity">Humidity:</p>
-            </div>
+            </div> -->
         </div>
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

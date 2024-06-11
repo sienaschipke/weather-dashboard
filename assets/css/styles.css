@@ -1,0 +1,9 @@
+h1 {
+    background: linear-gradient(to right, #4354b1, #261460) ;
+    color: white;
+}
+
+.forecast-card {
+    background-color: #323d50;
+    color: white;
+}

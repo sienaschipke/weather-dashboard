@@ -63,11 +63,12 @@ const displayWeather = (data) => {
     console.log(data);
     const todaysDate = dayjs.unix(data.list[0].dt);
     mainWeatherCard.append(`
-        <h2>${data.city.name} ${}</h2>
+        <h2>${data.city.name} ${todaysDate}</h2>
         <p id="main-temp">Temp: ${data.list[0].main.temp} ºF</p>
         <p id="main-wind">Wind: ${data.list[0].wind.speed} MPH</p>
         <p id="main-humidity">Humidity: ${data.list[0].main.humidity}%</p>
-    `)
+    `);
+    
 }
 
 // USER INTERACTIONS

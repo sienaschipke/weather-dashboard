@@ -2,6 +2,7 @@
 const cityInputEl = $("#cityInput")
 const submitBtn = $("#submitButton")
 const mainWeatherCard = $("#mainWeather");
+const forecastCards = $("#forecastCards");
 
 // DATA
 
@@ -62,13 +63,24 @@ const getWeatherData = (lat, lon) => {
 const displayWeather = (data) => {
     console.log(data);
     const todaysDate = dayjs.unix(data.list[0].dt);
+    let futureDate;
     mainWeatherCard.append(`
         <h2>${data.city.name} ${todaysDate}</h2>
         <p id="main-temp">Temp: ${data.list[0].main.temp} ºF</p>
         <p id="main-wind">Wind: ${data.list[0].wind.speed} MPH</p>
         <p id="main-humidity">Humidity: ${data.list[0].main.humidity}%</p>
     `);
-    
+    for (let i = 0; i < 40; i+=8){
+        futureDate = dayjs.unix(data.list[i].dt)
+        forecastCards.append(`
+            <div class="forecast-card p-3">
+                <h4>${futureDate}</h4>
+                <p id="main-temp">Temp: ${data.list[i].main.temp} ºF</p>
+                <p id="main-wind">Wind: ${data.list[i].wind.speed} MPH</p>
+                <p id="main-humidity">Humidity: ${data.list[i].main.humidity}%</p>
+            </div>
+        `);
+    };
 }
 
 // USER INTERACTIONS
